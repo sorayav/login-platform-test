@@ -17,6 +17,16 @@
     @include forDesktop {
       width: 50%;
     }
+
+    button {
+      display: block;
+      background-color: $blueMain;
+      color: white;
+      border: none;
+      height: 40px;
+      width: 100px;
+      border-radius: 3px;
+    }
   }
 }
 
