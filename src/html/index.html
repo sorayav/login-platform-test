@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <include src="./partials/head.html" title="Karumi platform - log in"></include>
+  <body>
+    <div class="container">
+      <include src="./partials/header.html"></include>
+      <main class="main home">
+        <form class="form">
+          <input type="email" placeholder="Email" id="email__field">
+          <input type="password" placeholder="Password" id="password__field">
+      
+          <button type="button" class="btn__login" id="btn__login">Login</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+
+    <script>
+      // Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCzyImsIuLmCqK7rjeLQkoyAkr2x08vE_U",
+        authDomain: "karumi-login.firebaseapp.com",
+        databaseURL: "https://karumi-login.firebaseio.com",
+        projectId: "karumi-login",
+        storageBucket: "karumi-login.appspot.com",
+        messagingSenderId: "191314323647",
+        appId: "1:191314323647:web:a04d9df528b844311c7e0a"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Login platform functions
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          document.location.href = '/userpage.html';
+        } else {}
+        });
+    </script>
+
+    <script src="./assets/js/main.js"></script>
+    </script>
+  </body>
+</html>
