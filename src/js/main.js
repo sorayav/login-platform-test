@@ -5,6 +5,7 @@ console.log('Ready');
 // Login
 
 const loginBtn = document.getElementById('btn__login');
+const passwordField = document.getElementById('password__field');
 
 function login() {
   let userEmail = document.getElementById('email__field').value;
@@ -19,3 +20,12 @@ function login() {
 }
 
 loginBtn.addEventListener('click', login);
+
+// Pressing enter on the password field will log in
+
+function enterLogins(event) {
+  if(event.keyCode === 13) {
+    loginBtn.click();
+  }
+}
+passwordField.addEventListener('keyup', enterLogins);
