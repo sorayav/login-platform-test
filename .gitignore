@@ -57,3 +57,4 @@ public
 .browserslistrc
 .eslintrc.json
 .csscomb.json
+.gitignore
