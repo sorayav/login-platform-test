@@ -31,7 +31,7 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
 
-      // Login platform functions
+      // Login platform function
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           document.location.href = '/dashboard.html';
