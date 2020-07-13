@@ -12,6 +12,7 @@
           <button type="button" class="btn__login" id="btn__login">Login</button>
         </form>
       </main>
+      <div class="loader__container hide"><div class="loader"></div></div>
     </div>
 
     <!-- Server -->
@@ -35,6 +36,7 @@
       // Login platform function
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+          document.querySelector('.loader__container').classList.remove('hide');
           document.location.href = '/dashboard.html';
         } else {}
         });
