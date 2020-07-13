@@ -1,7 +1,7 @@
 .home {
 
   .form {
-
+    position: relative;
     input {
       width: 100%;
       height: 35px;
@@ -12,8 +12,8 @@
       padding: 0;
       box-sizing: border-box;
       padding-left: 10px;
-      -webkit-box-shadow: inset 0px 2px 3px -2px rgba(0,0,0,0.75);
-      -moz-box-shadow: inset 0px 2px 3px -2px rgba(0,0,0,0.75);
+      // -webkit-box-shadow: inset 0px 2px 3px -2px rgba(0,0,0,0.75);
+      // -moz-box-shadow: inset 0px 2px 3px -2px rgba(0,0,0,0.75);
       box-shadow: inset 0px 2px 3px -2px rgba(78, 78, 78, 0.3);
 
       &::placeholder {
