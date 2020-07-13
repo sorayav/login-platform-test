@@ -7,6 +7,7 @@
       <main class="main dashboard">
         <button type="button" class="btn__logout" id="btn__logout">Logout</button>
       </main>
+      <div class="loader__container hide"><div class="loader"></div></div>
     </div>
 
     <!-- Server -->
@@ -30,6 +31,7 @@
       // Logout platform function
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
+          document.querySelector('.loader__container').classList.remove('hide');
           document.location.href = '/index.html';
         } else {}
       });
