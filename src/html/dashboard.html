@@ -31,13 +31,15 @@
       // Logout platform function
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
-          document.querySelector('.loader__container').classList.remove('hide');
           document.location.href = '/index.html';
         } else {}
       });
 
       const logoutBtn = document.getElementById('btn__logout');
-      logoutBtn.addEventListener('click', () => { firebase.auth().signOut(); });
+      logoutBtn.addEventListener('click', () => { 
+        document.querySelector('.loader__container').classList.remove('hide')
+        firebase.auth().signOut(); 
+      });
     </script>
 
     <script src="./assets/js/main.js"></script>
