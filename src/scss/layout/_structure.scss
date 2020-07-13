@@ -4,14 +4,29 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  max-width: 80%;
+  max-width: 1200px;
   height: 100vh;
   margin: auto;
-}
+  transition: all 0.5s ease-in;
 
-@media (min-width: 500px) {
-  .container {
+  @include forDesktop {
     flex-direction: row;
+  }
+
+  main {
+    @include forDesktop {
+      width: 50%;
+    }
+
+    button {
+      display: block;
+      background-color: $blueMain;
+      color: white;
+      border: none;
+      height: 40px;
+      width: 100px;
+      border-radius: 3px;
+    }
   }
 }
 

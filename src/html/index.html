@@ -14,6 +14,7 @@
       </main>
     </div>
 
+    <!-- Server -->
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
 
@@ -31,15 +32,14 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
 
-      // Login platform functions
+      // Login platform function
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          document.location.href = '/userpage.html';
+          document.location.href = '/dashboard.html';
         } else {}
         });
     </script>
 
     <script src="./assets/js/main.js"></script>
-    </script>
   </body>
 </html>

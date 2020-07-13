@@ -2,30 +2,10 @@
 
 console.log('Ready');
 
-// document.querySelector('.form').addEventListener('submit', (ev) => ev.preventDefault());
-
-// firebase.auth().onAuthStateChanged(function(user) {
-//   if (user) {
-//     document.location.href = '/userpage.html';
-//     setInterval(() => {
-//       window.stop();
-//     }, 500);
-//     // window.stop();
-//     // document.location.href = '/userpage.html';
-//     // alert('logueado');
-//   } else {
-//     // alert('no logueado');
-//     document.location.href = '/index.html';
-//     setInterval(() => {
-//       window.stop();
-//     }, 500);
-//   }
-// });
-
-
 // Login
 
 const loginBtn = document.getElementById('btn__login');
+const passwordField = document.getElementById('password__field');
 
 function login() {
   let userEmail = document.getElementById('email__field').value;
@@ -41,12 +21,11 @@ function login() {
 
 loginBtn.addEventListener('click', login);
 
-// Logout
+// Pressing enter on the password field will log in
 
-const logoutBtn = document.getElementById('btn__logout');
-
-function logout() {
-  firebase.auth().signOut();
+function enterLogins(event) {
+  if(event.keyCode === 13) {
+    loginBtn.click();
+  }
 }
-
-logoutBtn.addEventListener('click', logout);
+passwordField.addEventListener('keyup', enterLogins);

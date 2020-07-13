@@ -1,5 +1,12 @@
-.page__header {
+.header {
+  margin: 6rem auto;
+  // margin-bottom: 7rem;
+  width: 50%;
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+  justify-content: center;
+  
+  .logo {
+    width: 100%;
+    max-width: 200px;
+  }
 }
