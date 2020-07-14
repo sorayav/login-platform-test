@@ -12,12 +12,16 @@ function login() {
   let userPassword = document.getElementById('password__field').value;
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
-    .then(document.querySelector('.loader__container').classList.remove('hide'))
     .catch(function(error) {
-      var errorCode = error.code;
       var errorMessage = error.message;
 
       window.alert(`Error: ${errorMessage}`);
+      return;
+    })
+    .then(function(user, error) {
+      if (user) {
+       (userEmail && userPassword) ? document.querySelector('.loader__container').classList.remove('hide') : 'Error';
+      }
     });
 }
 
