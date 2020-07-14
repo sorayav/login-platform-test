@@ -12,18 +12,18 @@ function login() {
   let userPassword = document.getElementById('password__field').value;
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
-  .then(document.querySelector('.loader__container').classList.remove('hide'))
-  .catch(function(error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
+    .then(document.querySelector('.loader__container').classList.remove('hide'))
+    .catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
 
-    window.alert(`Error: ${errorMessage}`);
-  });
+      window.alert(`Error: ${errorMessage}`);
+    });
 }
 
 loginBtn.addEventListener('click', login);
 
-// Pressing enter on the password field will log in
+// Pressing enter key on the password field will log in
 
 function enterLogins(event) {
   if(event.keyCode === 13) {
