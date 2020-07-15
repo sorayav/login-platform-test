@@ -6,12 +6,18 @@
       <include src="./partials/header.html"></include>
       <main class="main home">
         <form class="form">
-          <input type="email" placeholder="Email" id="email__field">
-          <input type="password" placeholder="Password" id="password__field">
-      
+          <label>
+            <input type="email" placeholder="Email" id="email__field">
+            <span class="border"></span>
+          </label>
+          <label>
+            <input type="password" placeholder="Password" id="password__field">
+            <span class="border"></span>
+          </label>
           <button type="button" class="btn__login" id="btn__login">Login</button>
         </form>
       </main>
+      <div class="loader__container hide"><div class="loader"></div></div>
     </div>
 
     <!-- Server -->

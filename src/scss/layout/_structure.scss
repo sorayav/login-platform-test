@@ -1,3 +1,6 @@
+body {
+  position: relative;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -26,10 +29,15 @@
       height: 40px;
       width: 100px;
       border-radius: 3px;
+      transition: background-color 0.1s ease-in;
+
+      &:hover {
+        background-color: $blueSecondary;
+      }
     }
   }
 }
-
+}
 .hide {
-  display: none;
+  display: none !important;
 }

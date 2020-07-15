@@ -7,6 +7,7 @@
       <main class="main dashboard">
         <button type="button" class="btn__logout" id="btn__logout">Logout</button>
       </main>
+      <div class="loader__container hide"><div class="loader"></div></div>
     </div>
 
     <!-- Server -->
@@ -35,7 +36,10 @@
       });
 
       const logoutBtn = document.getElementById('btn__logout');
-      logoutBtn.addEventListener('click', () => { firebase.auth().signOut(); });
+      logoutBtn.addEventListener('click', () => { 
+        loader();
+        firebase.auth().signOut(); 
+      });
     </script>
 
     <script src="./assets/js/main.js"></script>

@@ -7,21 +7,30 @@ console.log('Ready');
 const loginBtn = document.getElementById('btn__login');
 const passwordField = document.getElementById('password__field');
 
+const loader = () => {
+  document.querySelector('.loader__container').classList.remove('hide');
+};
+
 function login() {
   let userEmail = document.getElementById('email__field').value;
   let userPassword = document.getElementById('password__field').value;
 
-  firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function(error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
+    .then(function(user) {
+      if (user) {
+        loader();
+      }
+    })
+    .catch(function(error) {
+      var errorMessage = error.message;
 
-    window.alert(`Error: ${errorMessage}`);
-  });
+      window.alert(`Error: ${errorMessage}`);
+    });
 }
 
 loginBtn.addEventListener('click', login);
 
-// Pressing enter on the password field will log in
+// Pressing enter key on the password field will log in
 
 function enterLogins(event) {
   if(event.keyCode === 13) {
