@@ -21,7 +21,7 @@ function login() {
     .catch(error => {
       var errorMessage = error.message;
       loaderContainer.classList.add('hide');
-      window.alert(`Error: ${errorMessage}`);
+      alert(`Error: ${errorMessage}`);
     });
 }
 
