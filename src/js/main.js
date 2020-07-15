@@ -7,21 +7,25 @@ console.log('Ready');
 const loginBtn = document.getElementById('btn__login');
 const passwordField = document.getElementById('password__field');
 
+const loader = () => {
+  document.querySelector('.loader__container').classList.remove('hide');
+};
+
 function login() {
   let userEmail = document.getElementById('email__field').value;
   let userPassword = document.getElementById('password__field').value;
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
+    .then(function(user) {
+      if (user) {
+        loader();
+      }
+    })
     .catch(function(error) {
       var errorMessage = error.message;
 
       window.alert(`Error: ${errorMessage}`);
-      return;
-    })
-    .then(function(user, error) {
-      if (user) {
-       (userEmail && userPassword) ? document.querySelector('.loader__container').classList.remove('hide') : 'Error';
-      }
+      
     });
 }
 

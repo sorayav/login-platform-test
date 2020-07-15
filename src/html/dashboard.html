@@ -37,7 +37,7 @@
 
       const logoutBtn = document.getElementById('btn__logout');
       logoutBtn.addEventListener('click', () => { 
-        document.querySelector('.loader__container').classList.remove('hide');
+        loader();
         firebase.auth().signOut(); 
       });
     </script>
