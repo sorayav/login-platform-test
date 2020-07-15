@@ -1,14 +1,13 @@
 'use strict';
 
-console.log('Ready');
-
 // Login
 
 const loginBtn = document.getElementById('btn__login');
 const passwordField = document.getElementById('password__field');
+const loaderContainer = document.querySelector('.loader__container');
 
 const loader = () => {
-  document.querySelector('.loader__container').classList.remove('hide');
+  loaderContainer.classList.remove('hide');
 };
 
 function login() {
@@ -16,14 +15,12 @@ function login() {
   let userPassword = document.getElementById('password__field').value;
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
-    .then(function(user) {
-      if (user) {
-        loader();
-      }
-    })
-    .catch(function(error) {
+    .then(
+      loader()
+    )
+    .catch(error => {
       var errorMessage = error.message;
-
+      loaderContainer.classList.add('hide');
       window.alert(`Error: ${errorMessage}`);
     });
 }
