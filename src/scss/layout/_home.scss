@@ -1,7 +1,7 @@
 .home {
 
   .form {
-
+    position: relative;
     label {
       position: relative;
       z-index: 1;
@@ -52,6 +52,15 @@
 
     .btn__login {
      margin-top: 2rem;
+    }
+
+    .form__error {
+      font-size: 0.8rem;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      margin-bottom: 10px;
+      color: $error;
     }
   }
 }
