@@ -1,7 +1,7 @@
 .home {
 
   .form {
-
+    position: relative;
     label {
       position: relative;
       z-index: 1;
@@ -11,14 +11,14 @@
         height: 35px;
         max-width: 350px;
         border-radius: 3px;
-        border: 1px solid rgb(206, 206, 206);
+        border: 1px solid $inputBorder;
         margin-bottom: 1rem;
         padding: 0;
         box-sizing: border-box;
         padding-left: 10px;
-        -webkit-box-shadow: inset 0px 2px 3px -2px $inputBorder;
-        -moz-box-shadow: inset 0px 2px 3px -2px $inputBorder;
-        box-shadow: inset 0px 2px 3px -2px $inputBorder;
+        -webkit-box-shadow: inset 0px 2px 3px -2px $inputShadow;
+        -moz-box-shadow: inset 0px 2px 3px -2px $inputShadow;
+        box-shadow: inset 0px 2px 3px -2px $inputShadow;
 
         & ~ .border {
           position: absolute;
@@ -52,6 +52,15 @@
 
     .btn__login {
      margin-top: 2rem;
+    }
+
+    .form__error {
+      font-size: 0.8rem;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      margin-bottom: 10px;
+      color: $errorText;
     }
   }
 }

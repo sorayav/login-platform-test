@@ -20,8 +20,10 @@ function login() {
     )
     .catch(error => {
       var errorMessage = error.message;
+      const errorContainer = document.querySelector('.form__error');
       loaderContainer.classList.add('hide');
-      alert(`Error: ${errorMessage}`);
+      errorContainer.innerHTML = `Error: ${errorMessage}`;
+      window.addEventListener('keypress', () => { errorContainer.innerHTML = ''; })
     });
 }
 
