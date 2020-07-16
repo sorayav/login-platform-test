@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Karumi platform - dashboard</title>
+    <link rel="icon" type="image/png" href="../assets/images/karumi_logo.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <img class="logo" src="./assets/images/karumi_logo.png" alt="Karumi logo">
+      </header>
+      <main class="main dashboard">
+        <button type="button" class="btn__logout" id="btn__logout">Logout</button>
+      </main>
+      <div class="loader__container hide"><div class="loader"></div></div>
+    </div>
+
+    <!-- Server -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+
+    <script>
+      // Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCzyImsIuLmCqK7rjeLQkoyAkr2x08vE_U",
+        authDomain: "karumi-login.firebaseapp.com",
+        databaseURL: "https://karumi-login.firebaseio.com",
+        projectId: "karumi-login",
+        storageBucket: "karumi-login.appspot.com",
+        messagingSenderId: "191314323647",
+        appId: "1:191314323647:web:a04d9df528b844311c7e0a"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Logout platform function
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+          document.location.href = '/';
+        } else {}
+      });
+
+      const logoutBtn = document.getElementById('btn__logout');
+      logoutBtn.addEventListener('click', () => { 
+        loader();
+        firebase.auth().signOut(); 
+      });
+    </script>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
