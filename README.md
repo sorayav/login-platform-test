@@ -1,1 +1,1 @@
-# karumi-test
+# Login platform test
