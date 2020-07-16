@@ -4,9 +4,10 @@ $fontMain: "Roboto", sans-serif;
 // colors
 $blueMain: rgb(28, 151, 245);
 $blueSecondary: rgba(28, 151, 245, 0.8);
-$inputBorder: rgba(78, 78, 78, 0.3);
+$inputShadow: rgba(78, 78, 78, 0.3);
+$inputBorder: rgb(206, 206, 206);
 $placeholderText: rgb(194, 194, 194);
-$error: rgb(229, 83, 83);
+$errorText: rgb(229, 83, 83);
 
 // Device sizes
 $mobile: 500px;
