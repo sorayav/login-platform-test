@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Karumi platform - log in</title>
+    <link rel="icon" type="image/png" href="../assets/images/karumi_logo.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <img class="logo" src="./assets/images/karumi_logo.png" alt="Karumi logo">
+      </header>
+      <main class="main home">
+        <form class="form">
+          <p class="form__error"></p>
+          <label for="email">
+            <input type="email" placeholder="Email" id="email__field">
+            <span class="border"></span>
+          </label>
+          <label for="password">
+            <input type="password" placeholder="Password" id="password__field">
+            <span class="border"></span>
+          </label>
+          <button type="button" class="btn__login" id="btn__login">Login</button>
+        </form>
+      </main>
+      <div class="loader__container hide"><div class="loader"></div></div>
+    </div>
+
+    <!-- Server -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+
+    <script>
+      // Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCzyImsIuLmCqK7rjeLQkoyAkr2x08vE_U",
+        authDomain: "karumi-login.firebaseapp.com",
+        databaseURL: "https://karumi-login.firebaseio.com",
+        projectId: "karumi-login",
+        storageBucket: "karumi-login.appspot.com",
+        messagingSenderId: "191314323647",
+        appId: "1:191314323647:web:a04d9df528b844311c7e0a"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Login platform function
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          document.location.href = './dashboard.html';
+        } else {}
+        });
+    </script>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
