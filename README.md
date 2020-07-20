@@ -5,9 +5,9 @@ As per the [user story](https://github.com/sorayav/login-platform-test/issues/1)
 
 ## Screenshots
 ![Mobile view](https://media.giphy.com/media/JsgclMCxpbUL6TK0Xj/giphy.gif)
-
+###### Mobile view.
 ![Desktop view](https://media.giphy.com/media/kG2sSVXkoDH7dn9km5/giphy.gif)
-
+###### Desktop view.
 ## Usage
 For a live demo, you can check the [Github page of the project](https://sorayav.github.io/login-platform-test). 
 
